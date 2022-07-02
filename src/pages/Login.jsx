@@ -13,6 +13,10 @@ class Login extends React.Component {
     };
   }
 
+  componentDidMount() {
+    sessionStorage.removeItem('name');
+  }
+
   createNewUser = (name) => {
     const { isLogged } = this.props;
 

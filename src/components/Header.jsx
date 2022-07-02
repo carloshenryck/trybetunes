@@ -16,11 +16,21 @@ class Header extends React.Component {
   }
 
   async componentDidMount() {
+    if (sessionStorage.getItem('name') !== null) {
+      this.setState({
+        name: sessionStorage.getItem('name'),
+        hasName: true,
+      });
+    }
+
     const userObj = await getUser();
     const { name } = userObj;
     this.setState({
       name,
       hasName: true,
+    }, () => {
+      const { name: userName } = this.state;
+      sessionStorage.setItem('name', userName);
     });
   }
 
