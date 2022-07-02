@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { CgProfile } from 'react-icons/cg';
 import '../styles/header.css';
@@ -15,25 +16,20 @@ class Header extends React.Component {
     };
   }
 
+  // implementar session storage
   async componentDidMount() {
-    if (sessionStorage.getItem('name') !== null) {
-      this.setState({
-        name: sessionStorage.getItem('name'),
-        hasName: true,
-      });
-    }
-
     const userObj = await getUser();
     const { name } = userObj;
     this.setState({
       name,
       hasName: true,
-    }, () => {
-      const { name: userName } = this.state;
-      sessionStorage.setItem('name', userName);
     });
   }
 
+  /*   changeLinkStyle({ target }) {
+
+  }
+ */
   render() {
     const { name, hasName } = this.state;
 
@@ -51,16 +47,44 @@ class Header extends React.Component {
           color="white"
           height="1.2rem"
           width="1.2rem"
-          textColor="white"
+          textcolor="white"
           fontSize="1.2rem"
         />
       </div>
     );
 
     return (
-      <header data-testid="header-component" className="headerContainer">
-        <img src={ lightLogo } alt="trybeTunes logo" className="headerLogo" />
-        { hasName ? header : loading}
+      <header data-testid="header-component">
+        <div className="headerContainer">
+          <img src={ lightLogo } alt="trybeTunes logo" className="headerLogo" />
+          { hasName ? header : loading}
+        </div>
+        <div className="linkContainer">
+          <Link
+            to="/search"
+            data-testid="link-to-search"
+            className="linkRoute"
+            onClick={ this.changeLinkStyle }
+          >
+            Search
+          </Link>
+          <Link
+            to="/favorites"
+            data-testid="link-to-favorites"
+            className="linkRoute addBorder"
+            onClick={ this.changeLinkStyle }
+          >
+            Favorites
+          </Link>
+          <Link
+            to="/profile"
+            data-testid="link-to-profile"
+            className="linkRoute"
+            onClick={ this.changeLinkStyle }
+          >
+            Profile
+          </Link>
+        </div>
       </header>
     );
   }

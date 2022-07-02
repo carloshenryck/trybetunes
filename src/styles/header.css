@@ -35,3 +35,24 @@
   font-size: 3rem;
 }
 
+.linkContainer {
+  display: flex;
+  width: 100%;
+}
+
+.linkRoute {
+  background-color: rgb(240, 242, 245);
+  color: rgb(47, 193, 140);
+  display: flex;
+  flex-grow: 1;
+  font-size: 1.6rem;
+  font-weight: 700;
+  justify-content: center;
+  padding: 2rem 5rem;
+  text-decoration: none;
+}
+
+.addBorder {
+  border-left: 5px solid white;
+  border-right: 5px solid white;
+}

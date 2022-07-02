@@ -35,7 +35,7 @@ class Login extends React.Component {
         color="black"
         height="10rem"
         width="10rem"
-        textColor="black"
+        textcolor="black"
         fontSize="2rem"
       />
     );
