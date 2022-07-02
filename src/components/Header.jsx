@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { CgProfile } from 'react-icons/cg';
 import '../styles/header.css';
@@ -26,10 +26,6 @@ class Header extends React.Component {
     });
   }
 
-  /*   changeLinkStyle({ target }) {
-
-  }
- */
   render() {
     const { name, hasName } = this.state;
 
@@ -60,30 +56,33 @@ class Header extends React.Component {
           { hasName ? header : loading}
         </div>
         <div className="linkContainer">
-          <Link
+          <NavLink
             to="/search"
             data-testid="link-to-search"
             className="linkRoute"
+            activeClassName="activeLinkRoute"
             onClick={ this.changeLinkStyle }
           >
             Search
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/favorites"
             data-testid="link-to-favorites"
-            className="linkRoute addBorder"
+            className="linkRoute"
+            activeClassName="activeLinkRoute"
             onClick={ this.changeLinkStyle }
           >
             Favorites
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/profile"
             data-testid="link-to-profile"
             className="linkRoute"
+            activeClassName="activeLinkRoute"
             onClick={ this.changeLinkStyle }
           >
             Profile
-          </Link>
+          </NavLink>
         </div>
       </header>
     );
