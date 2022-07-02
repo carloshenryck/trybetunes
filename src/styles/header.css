@@ -1,0 +1,38 @@
+/* stylelint-disable order/properties-alphabetical-order */
+.headerContainer {
+  height: 6rem;
+  width: 100%;
+  background-color: rgb(2, 48, 49);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerLogo {
+  margin: 0 0 2.5rem 3rem;
+  height: 6rem;
+}
+
+.headerLoaderContainer {
+  margin: 0 6rem 1.2rem 0;
+}
+
+.userContainer {
+  padding: 0 4rem 0 0;
+  height: 3rem;
+  background-color: white;
+  color: rgb(41, 49, 61);
+  border-radius: 2rem;
+  margin-right: 3rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.profileIcon {
+  color: rgb(47, 193, 140);
+  font-size: 3rem;
+}
+

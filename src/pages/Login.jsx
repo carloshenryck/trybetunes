@@ -25,11 +25,21 @@ class Login extends React.Component {
 
   render() {
     const { isLoading } = this.state;
+    const loading = (
+      <Loading
+        type="bubbles"
+        color="black"
+        height="10rem"
+        width="10rem"
+        textColor="black"
+        fontSize="2rem"
+      />
+    );
 
     return (
       <div>
         { isLoading
-          ? <Loading />
+          ? loading
           : <Form createNewUser={ this.createNewUser } />}
       </div>
     );

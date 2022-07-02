@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import '../styles/form.css';
-import logo from '../trybeTunes.svg';
+import darkLogo from '../images/darkLogo.svg';
 
 class Form extends React.Component {
   constructor() {
@@ -35,7 +35,7 @@ class Form extends React.Component {
 
     return (
       <div data-testid="page-login" className="loginContainer">
-        <img src={ logo } alt="trybeTunes logo" className="logo" />
+        <img src={ darkLogo } alt="trybeTunes logo" className="logo" />
 
         <div className="formWrapper">
           <input
