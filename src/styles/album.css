@@ -1,0 +1,20 @@
+.albumsContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 0 15rem;
+}
+
+.albumNotFind {
+  color: #023031;
+  font-size: 4rem;
+  font-weight: 300;
+  grid-column: 1/5;
+  justify-self: center;
+}
+
+.artistSearched {
+  font-size: 3rem;
+  font-weight: 300;
+  grid-column: 1/5;
+}
+

@@ -2,14 +2,12 @@ import React from 'react';
 import ReactLoading from 'react-loading';
 import PropTypes from 'prop-types';
 
-import '../styles/loading.css';
-
 class Loading extends React.Component {
   render() {
     const { type, color, height, width, textcolor, fontSize } = this.props;
 
     return (
-      <div className="loading">
+      <>
         <p style={ { color: textcolor, fontSize } }>Carregando...</p>
         <ReactLoading
           type={ type }
@@ -18,7 +16,7 @@ class Loading extends React.Component {
           width={ width }
           textcolor={ textcolor }
         />
-      </div>
+      </>
     );
   }
 }

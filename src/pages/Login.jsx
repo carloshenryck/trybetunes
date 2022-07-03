@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import '../styles/loginLoad.css';
 import Loading from '../components/Loading';
 import Form from '../components/Form';
 import { createUser } from '../services/userAPI';
@@ -14,7 +15,7 @@ class Login extends React.Component {
   }
 
   componentDidMount() {
-    sessionStorage.removeItem('name');
+    localStorage.removeItem('user');
   }
 
   createNewUser = (name) => {
@@ -30,14 +31,16 @@ class Login extends React.Component {
   render() {
     const { isLoading } = this.state;
     const loading = (
-      <Loading
-        type="bubbles"
-        color="black"
-        height="10rem"
-        width="10rem"
-        textcolor="black"
-        fontSize="2rem"
-      />
+      <div className="loginLoad">
+        <Loading
+          type="bubbles"
+          color="black"
+          height="10rem"
+          width="10rem"
+          textcolor="black"
+          fontSize="2rem"
+        />
+      </div>
     );
 
     return (

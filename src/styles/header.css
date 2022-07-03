@@ -13,7 +13,11 @@
 }
 
 .headerLoaderContainer {
-  margin: 0 6rem 1.2rem 0;
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-right: 4rem;
 }
 
 .userContainer {

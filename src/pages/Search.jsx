@@ -3,6 +3,9 @@ import React from 'react';
 import '../styles/search.css';
 /* import { AiOutlineSearch } from 'react-icons/ai'; */
 import Header from '../components/Header';
+import Loading from '../components/Loading';
+import Albums from '../components/Albums';
+import searchAlbumsAPI from '../services/searchAlbumsAPI';
 
 class Search extends React.Component {
   constructor() {
@@ -10,6 +13,10 @@ class Search extends React.Component {
     this.state = {
       name: '',
       isDisabled: true,
+      isLoading: false,
+      hasSearch: false,
+      whatISearched: '',
+      albums: [],
     };
   }
 
@@ -29,12 +36,31 @@ class Search extends React.Component {
     }, this.canButtonBeActivated);
   }
 
-  render() {
-    const { name, isDisabled } = this.state;
+  searchAlbums = async (name) => {
+    const result = await searchAlbumsAPI(name);
+    this.setState({
+      isLoading: false,
+      hasSearch: true,
+      albums: result,
+    });
+  }
 
-    return (
-      <div data-testid="page-search">
-        <Header />
+  handleClick = async (event) => {
+    event.preventDefault();
+    const { name } = this.state;
+    this.setState({
+      name: '',
+      isDisabled: true,
+      isLoading: true,
+      whatISearched: name,
+    }, () => this.searchAlbums(name));
+  }
+
+  render() {
+    const { name, isDisabled, isLoading, hasSearch, albums, whatISearched } = this.state;
+
+    const form = (
+      <>
         <form className="searchFormContainer">
           <input
             type="search"
@@ -48,10 +74,32 @@ class Search extends React.Component {
             data-testid="search-artist-button"
             className="styledButton"
             disabled={ isDisabled }
+            onClick={ this.handleClick }
           >
             Pesquisar
           </button>
         </form>
+        { hasSearch && <Albums albums={ albums } whatISearched={ whatISearched } /> }
+      </>
+    );
+
+    const load = (
+      <div className="searchLoading">
+        <Loading
+          type="spin"
+          color="rgb(2, 48, 49)"
+          height="4rem"
+          width="4rem"
+          textcolor="rgb(2, 48, 49)"
+          fontSize="4rem"
+        />
+      </div>
+    );
+
+    return (
+      <div data-testid="page-search" className="pageSearch">
+        <Header />
+        { isLoading ? load : form}
       </div>
     );
   }

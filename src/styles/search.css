@@ -1,9 +1,14 @@
+.pageSearch {
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+}
+
 .searchFormContainer {
   align-items: center;
   display: flex;
   gap: 1rem;
   justify-content: center;
-  padding: 7rem 0;
   width: 100%;
 }
 
@@ -28,4 +33,15 @@
 
 .styledButton:disabled {
   background-color: rgba(0, 57, 229, 0.486);
+}
+
+.searchLoading {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.searchLoading p {
+  margin-bottom: 1rem;
 }

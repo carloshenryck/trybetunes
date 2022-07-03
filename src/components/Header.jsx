@@ -41,8 +41,8 @@ class Header extends React.Component {
         <Loading
           type="spin"
           color="white"
-          height="1.2rem"
-          width="1.2rem"
+          height="2rem"
+          width="2rem"
           textcolor="white"
           fontSize="1.2rem"
         />
