@@ -15,14 +15,19 @@ class Albums extends React.Component {
           { ` ${whatISearched}` }
         </p>
         { albums.map((album) => (
-          <p key={ album.collectionId }>
+          <div key={ album.collectionId }>
             <Link
               to={ `/album/${album.collectionId}` }
               data-testid={ `link-to-album-${album.collectionId}` }
+              className="albumCard"
             >
-              {album.collectionName}
+              <img src={ album.artworkUrl100 } alt="album art" />
+              <div className="albumInfo">
+                <p className="albumName">{album.collectionName}</p>
+                <p className="albumArtist">{album.artistName}</p>
+              </div>
             </Link>
-          </p>
+          </div>
         ))}
       </>
     );

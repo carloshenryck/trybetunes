@@ -1,5 +1,6 @@
 .albumsContainer {
   display: grid;
+  gap: 2rem;
   grid-template-columns: repeat(4, 1fr);
   padding: 0 15rem;
 }
@@ -18,3 +19,31 @@
   grid-column: 1/5;
 }
 
+.albumCard {
+  background-color: rgb(242, 242, 242);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 35rem;
+  overflow: auto;
+  overflow-x: hidden;
+  text-decoration: none;
+  width: 100%;
+}
+
+.albumInfo {
+  margin-left: 1.2rem;
+}
+
+.albumName {
+  color: rgb(61, 73, 92);
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 0.1rem;
+}
+
+.albumArtist {
+  color: rgb(61, 73, 92);
+  font-size: 1.4rem;
+  font-weight: 300;
+}
