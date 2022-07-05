@@ -15,7 +15,8 @@ class Login extends React.Component {
   }
 
   componentDidMount() {
-    localStorage.removeItem('user');
+    localStorage.clear();
+    localStorage.setItem('favorite_songs', JSON.stringify([]));
   }
 
   createNewUser = (name) => {
