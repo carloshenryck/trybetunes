@@ -4,7 +4,7 @@ import '../styles/search.css';
 /* import { AiOutlineSearch } from 'react-icons/ai'; */
 import Header from '../components/Header';
 import Loading from '../components/Loading';
-import Albums from '../components/Albums';
+import Albums from '../components/SearchedAlbums';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 
 class Search extends React.Component {

@@ -1,49 +1,20 @@
-.albumsContainer {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 0 15rem;
-}
-
-.albumNotFind {
-  color: #023031;
-  font-size: 4rem;
-  font-weight: 300;
-  grid-column: 1/5;
-  justify-self: center;
-}
-
-.artistSearched {
-  font-size: 3rem;
-  font-weight: 300;
-  grid-column: 1/5;
-}
-
-.albumCard {
-  background-color: rgb(242, 242, 242);
-  border-radius: 1rem;
+.pageAlbumContainer {
   display: flex;
   flex-direction: column;
-  height: 35rem;
-  overflow: auto;
-  overflow-x: hidden;
-  text-decoration: none;
-  width: 100%;
+  gap: 10rem;
+  height: 100vh;
 }
 
-.albumInfo {
-  margin-left: 1.2rem;
+.albumWrapper {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  gap: 10rem;
+  justify-content: center;
 }
 
-.albumName {
-  color: rgb(61, 73, 92);
-  font-size: 1.8rem;
-  font-weight: 500;
-  margin-bottom: 0.1rem;
-}
-
-.albumArtist {
-  color: rgb(61, 73, 92);
-  font-size: 1.4rem;
-  font-weight: 300;
+.musicCardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }

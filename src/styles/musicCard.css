@@ -1,0 +1,24 @@
+.musicsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.musicWrapper {
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.musicName {
+  font-size: 1.4rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 10rem;
+}
+
+.favorites {
+  align-items: center;
+  display: flex;
+}

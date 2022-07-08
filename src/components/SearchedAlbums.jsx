@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import '../styles/album.css';
+import '../styles/searchedAlbums.css';
 
 class Albums extends React.Component {
   render() {
@@ -15,19 +15,18 @@ class Albums extends React.Component {
           { ` ${whatISearched}` }
         </p>
         { albums.map((album) => (
-          <div key={ album.collectionId }>
-            <Link
-              to={ `/album/${album.collectionId}` }
-              data-testid={ `link-to-album-${album.collectionId}` }
-              className="albumCard"
-            >
-              <img src={ album.artworkUrl100 } alt="album art" />
-              <div className="albumInfo">
-                <p className="albumName">{album.collectionName}</p>
-                <p className="albumArtist">{album.artistName}</p>
-              </div>
-            </Link>
-          </div>
+          <Link
+            to={ `/album/${album.collectionId}` }
+            data-testid={ `link-to-album-${album.collectionId}` }
+            className="albumCard"
+            key={ album.collectionId }
+          >
+            <img src={ album.artworkUrl100 } alt="album art" className="albumImage" />
+            <div className="albumInfo">
+              <p className="albumName">{album.collectionName}</p>
+              <p className="albumArtist">{album.artistName}</p>
+            </div>
+          </Link>
         ))}
       </>
     );

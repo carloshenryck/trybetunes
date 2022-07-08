@@ -8,6 +8,8 @@ import Loading from '../components/Loading';
 import AlbumCard from '../components/AlbumCard';
 import MusicCard from '../components/MusicCard';
 
+import '../styles/album.css';
+
 class Album extends React.Component {
   constructor() {
     super();
@@ -51,23 +53,25 @@ class Album extends React.Component {
     );
 
     return (
-      <div data-testid="page-album">
+      <div data-testid="page-album" className="pageAlbumContainer">
         <Header />
         { isLoading
           ? loading
           : (
-            <>
+            <div className="albumWrapper">
               <AlbumCard albumInfo={ albumInfo } />
-              {tracks.map((track) => (
-                <MusicCard
-                  track={ track }
-                  key={ track.trackId }
-                  isFavorite={
-                    favoriteSongs.find((song) => song.trackId === track.trackId)
-                  }
-                />
-              ))}
-            </>
+              <div className="musicCardContainer">
+                {tracks.map((track) => (
+                  <MusicCard
+                    track={ track }
+                    key={ track.trackId }
+                    isFavorite={
+                      favoriteSongs.find((song) => song.trackId === track.trackId)
+                    }
+                  />
+                ))}
+              </div>
+            </div>
           )}
       </div>
     );

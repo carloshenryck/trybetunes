@@ -1,0 +1,21 @@
+.albumInfoContainer {
+  align-self: flex-start;
+  margin: 5rem 0;
+  position: sticky;
+  top: 5rem;
+}
+
+.albumName {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  max-width: 20rem;
+  word-break: break-all;
+}
+
+.albumArtist {
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
+  max-width: 20rem;
+  word-break: break-all;
+}
