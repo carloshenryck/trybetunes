@@ -5,6 +5,10 @@
   top: 5rem;
 }
 
+.albumInfoContainer img {
+  border-radius: 1rem;
+}
+
 .albumName {
   font-size: 2rem;
   font-weight: 600;

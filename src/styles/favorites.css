@@ -1,0 +1,14 @@
+.favoritePage {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.favoritesContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 2rem;
+  justify-content: center;
+}

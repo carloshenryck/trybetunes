@@ -22,7 +22,8 @@ class MusicCard extends React.Component {
 
   setFavorite = async () => {
     const { isFavorite } = this.state;
-    const { track } = this.props;
+    const { track, updateFavorites } = this.props;
+
     this.setState({ isLoading: true });
 
     if (isFavorite) {
@@ -35,6 +36,8 @@ class MusicCard extends React.Component {
       isLoading: false,
       isFavorite: !isFavorite,
     });
+
+    if (updateFavorites) await updateFavorites();
   }
 
   render() {
