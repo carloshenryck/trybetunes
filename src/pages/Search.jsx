@@ -65,7 +65,7 @@ class Search extends React.Component {
           <input
             type="search"
             data-testid="search-artist-input"
-            placeholder="Nome do Artista"
+            placeholder="Artist name"
             onChange={ this.handleChange }
             value={ name }
           />
@@ -76,7 +76,7 @@ class Search extends React.Component {
             disabled={ isDisabled }
             onClick={ this.handleClick }
           >
-            Pesquisar
+            Search
           </button>
         </form>
         { hasSearch && <Albums albums={ albums } whatISearched={ whatISearched } /> }
