@@ -18,7 +18,7 @@ Busque por álbuns de artistas, e ouça previews de suas músicas
 - Editar configurações de seu perfil
 
 ## 🧠 Aprendizado
-Durante esse projeto aprendi a trabalhar com react router
+Durante esse projeto aprendi a trabalhar com react router e entender o ciclo de vida de componentes
 
 ## 📦 Inicialização
 ```bash
